@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Portfolio UGC de Morgane Coadou : vidéos et photos beauté, mode et lifestyle.">
+<title>Morgane Coadou UGC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Pinyon+Script&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: un "tournage" vertical — hero en grand titre condensé autour d'un téléphone qui filme, puis un feed 9:16 qu'on fait défiler comme TikTok, les formats, le process, le contact. Look unique (papier clair + vert forêt + rose gloss). */
+:root{
+  --paper:#eef0e6;      /* papier légèrement vert */
+  --paper-2:#e2e6d6;
+  --ink:#1f3312;        /* vert forêt profond */
+  --green:#3d5a1a;      /* vert de son Canva */
+  --gloss:#e9879b;      /* rose gloss */
+  --muted:#5d6b50;
+  --white:#fbfcf7;
+  --f-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --f-script:"Pinyon Script","Snell Roundhand","Brush Script MT",cursive;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;overflow-x:hidden}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gloss);outline-offset:3px}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+/* ---------- barre du haut ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.rec{display:inline-flex;align-items:center;gap:8px}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--gloss);animation:blink 1.2s steps(2) infinite}
+.top nav{display:flex;gap:18px;flex-wrap:wrap}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--gloss)}
+@keyframes blink{50%{opacity:.2}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-block:clamp(32px,6vw,72px) 24px}
+.hero.wrap{max-width:1600px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(10px,2vw,28px);padding-top:clamp(40px,5vw,70px)}
+.big{font-family:var(--f-display);font-size:max(52px,calc((min(100vw,1600px) - 440px) / 7.8));white-space:nowrap;line-height:.86;text-transform:uppercase;color:var(--green);letter-spacing:-.01em}
+.big.l{text-align:right}
+.big.r{text-align:left}
+.nm{position:relative;display:inline-block}
+.script.hs{position:absolute;left:-.04em;bottom:96%;font-size:clamp(40px,5.5vw,84px);white-space:nowrap}
+.script{font-family:var(--f-script);text-transform:none;letter-spacing:0;color:var(--ink);font-size:clamp(44px,7vw,96px);line-height:1;display:block;margin-bottom:-.15em}
+.hero-sub{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-top:28px}
+.hero-sub p{max-width:46ch;margin:0;font-size:18px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--white);text-decoration:none;font-weight:700;border:0;cursor:pointer;font:inherit;font-weight:700}
+.pill:hover{background:var(--green)}
+.pill.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.pill.ghost:hover{background:var(--ink);color:var(--white)}
+
+/* téléphone */
+.phone{width:clamp(190px,22vw,260px);aspect-ratio:9/19;max-width:100%;border-radius:38px;background:var(--ink);padding:9px;box-shadow:0 30px 60px -20px rgba(31,51,18,.55);position:relative;transform:rotate(-3deg)}
+.screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:linear-gradient(160deg,#f6c7cf 0%,#e9879b 45%,#b9576e 100%)}
+.screen .hud{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:22px 14px 16px;color:var(--white)}
+.hud-top{display:flex;justify-content:space-between;align-items:center}
+.tc{font-family:var(--f-mono);font-size:12px;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:6px;font-variant-numeric:tabular-nums}
+.gloss-bottle{position:absolute;left:50%;top:46%;width:30%;transform:translate(-50%,-50%) rotate(14deg);animation:float 5s ease-in-out infinite}
+.gloss-bottle .cap{height:52px;border-radius:10px 10px 4px 4px;background:#2a1d20}
+.gloss-bottle .body{height:120px;border-radius:6px 6px 16px 16px;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,255,255,.1) 35%,rgba(255,255,255,.35) 70%,rgba(255,255,255,.1));border:1px solid rgba(255,255,255,.6);display:grid;place-items:center}
+.gloss-bottle .body span{font-family:var(--f-script);font-size:26px;color:#7b2c3f}
+@keyframes float{50%{transform:translate(-50%,-56%) rotate(9deg)}}
+.cap-line{font-size:13px;line-height:1.35;text-shadow:0 1px 6px rgba(0,0,0,.3)}
+.cap-line b{display:block;font-size:14px}
+.side-icons{position:absolute;right:10px;bottom:70px;display:grid;gap:12px}
+.side-icons span{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.28);display:grid;place-items:center;font-size:13px}
+.sticker{position:absolute;font-family:var(--f-script);font-size:30px;color:var(--ink);background:var(--white);padding:2px 16px 6px;border-radius:999px;box-shadow:0 8px 20px -10px rgba(0,0,0,.4);white-space:nowrap}
+.sticker.s1{top:8%;left:-34%;transform:rotate(-10deg)}
+.sticker.s2{bottom:12%;right:-38%;transform:rotate(8deg);background:var(--gloss);color:var(--white)}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;background:var(--ink);color:var(--paper);padding-block:14px;margin-top:40px}
+.track{display:flex;gap:40px;width:max-content;animation:slide 28s linear infinite}
+.track span{font-family:var(--f-display);font-size:clamp(26px,4vw,44px);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:40px}
+.track span::after{content:"✦";color:var(--gloss);font-size:.6em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,9vw,110px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head h2{font-family:var(--f-display);font-size:clamp(44px,7vw,92px);line-height:.9;text-transform:uppercase;color:var(--green)}
+.sec-head h2 .script{display:inline;font-size:.75em;color:var(--ink);text-transform:none;margin-right:.1em}
+.sec-head p{max-width:40ch;margin:0;color:var(--muted)}
+
+/* à propos */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);align-items:center}
+.polaroid{background:var(--white);padding:14px 14px 56px;box-shadow:0 20px 40px -20px rgba(31,51,18,.45);transform:rotate(-4deg);max-width:340px;position:relative}
+.polaroid .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid .ph{position:relative;overflow:hidden;aspect-ratio:4/5;max-width:100%;background:linear-gradient(170deg,#c7cfb3,#8a9a6d 60%,#3d5a1a);display:grid;place-items:center;color:var(--white);text-align:center;padding:16px}
+.polaroid figcaption{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--f-script);font-size:32px}
+.tape{position:absolute;top:-14px;left:50%;width:110px;height:30px;background:rgba(233,135,155,.55);transform:translateX(-50%) rotate(3deg)}
+.about-text p{font-size:clamp(18px,1.8vw,22px);margin:0 0 18px;max-width:36ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.fact{border-top:1.5px solid var(--ink);padding-top:10px}
+.fact b{font-family:var(--f-display);font-size:34px;font-weight:400;display:block;line-height:1;color:var(--green)}
+.fact span{font-size:13px;color:var(--muted)}
+
+/* feed */
+.feed-section{background:var(--ink);color:var(--paper)}
+.feed-section .sec-head h2{color:var(--paper)}
+.feed-section .sec-head h2 .script{color:var(--gloss)}
+.feed-section .sec-head p{color:#b9c4a8}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chip{font:inherit;font-size:14px;padding:8px 16px;border-radius:999px;border:1.5px solid #b9c4a8;background:transparent;color:var(--paper);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--gloss);border-color:var(--gloss);color:var(--ink);font-weight:700}
+.feed{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;scrollbar-color:var(--gloss) transparent}
+.clip{flex:0 0 auto;width:clamp(200px,24vw,250px);scroll-snap-align:start;cursor:pointer;background:none;border:0;padding:0;color:inherit;text-align:left;font:inherit}
+.clip .frame{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;transition:transform .35s ease}
+.clip:hover .frame{transform:translateY(-6px) rotate(-1deg)}
+.clip .frame video,.clip .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:12px;background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 30%,transparent 60%,rgba(0,0,0,.55))}
+.frame .ov .row{display:flex;justify-content:space-between;align-items:center}
+.tag{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:var(--white);color:var(--ink);padding:4px 8px;border-radius:6px}
+.frame .label{font-family:var(--f-script);font-size:40px;line-height:1;color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.frame .play{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;align-self:center;color:var(--ink);font-size:18px}
+.progress{height:3px;background:rgba(255,255,255,.3);border-radius:2px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--white)}
+.clip.playing .progress i{animation:prog var(--d,15s) linear forwards}
+.clip.playing .play{opacity:0}
+@keyframes prog{to{width:100%}}
+.clip .meta{display:flex;justify-content:space-between;margin-top:10px;font-size:14px;gap:8px}
+.clip .meta span:last-child{font-family:var(--f-mono);font-size:12px;color:#b9c4a8;font-variant-numeric:tabular-nums}
+.hint{margin-top:12px;color:#b9c4a8}
+
+/* formats */
+.formats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.fmt{background:var(--white);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0;border:1.5px solid transparent;transition:border-color .25s,transform .25s}
+.fmt:hover{border-color:var(--ink);transform:translateY(-4px)}
+.fmt h3{font-family:var(--f-display);font-weight:400;font-size:30px;text-transform:uppercase;color:var(--green);line-height:1}
+.fmt p{margin:0;font-size:15px;color:var(--muted)}
+.viz{height:64px;display:flex;align-items:center;gap:3px}
+.viz.wave i{flex:1;background:var(--gloss);border-radius:2px;height:20%;animation:wave 1.1s ease-in-out infinite}
+@keyframes wave{50%{height:var(--h,80%)}}
+.viz.box{justify-content:center}
+.viz.box .b{width:56px;height:40px;background:var(--paper-2);border:1.5px solid var(--ink);position:relative;border-radius:3px}
+.viz.box .lid{position:absolute;left:-2px;right:-2px;top:-12px;height:12px;background:var(--gloss);border:1.5px solid var(--ink);border-radius:3px;transform-origin:left bottom;animation:lid 2.4s ease-in-out infinite}
+@keyframes lid{40%,70%{transform:rotate(-38deg)}}
+.viz.face{justify-content:center}
+.viz.face .cam{width:64px;height:44px;border:1.5px solid var(--ink);border-radius:10px;position:relative;display:grid;place-items:center}
+.viz.face .cam::after{content:"";width:18px;height:18px;border-radius:50%;border:1.5px solid var(--ink);background:var(--gloss)}
+.viz.face .cam::before{content:"";position:absolute;top:6px;right:6px;width:7px;height:7px;border-radius:50%;background:#d9363e;animation:blink 1.2s steps(2) infinite}
+.fmt .ex{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:auto;padding-top:12px;border-top:1px dashed color-mix(in srgb,var(--ink) 30%,transparent)}
+
+/* photos */
+.photos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:120px;gap:12px}
+.ph-tile{border-radius:16px;position:relative;overflow:hidden;display:flex;align-items:end;padding:12px;color:var(--white)}
+.ph-tile span{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.28);padding:3px 7px;border-radius:5px}
+.ph-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t1{grid-column:span 2;grid-row:span 3}.t2{grid-column:span 2;grid-row:span 2}.t3{grid-column:span 2;grid-row:span 2}.t4{grid-column:span 2;grid-row:span 1}.t5{grid-column:span 2;grid-row:span 1}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:s}
+.step{padding:22px 20px 22px 0;border-top:2px solid var(--ink);position:relative;min-width:0}
+.step .n{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.step h3{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3vw,36px);text-transform:uppercase;margin:8px 0;color:var(--green)}
+.step p{margin:0;font-size:15px;color:var(--muted);max-width:28ch}
+.step::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--gloss);border:2px solid var(--ink)}
+
+/* contact */
+.contact{background:var(--gloss);border-radius:32px;padding:clamp(28px,6vw,72px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact h2{font-family:var(--f-display);font-size:clamp(38px,5vw,68px);line-height:.88;text-transform:uppercase;color:var(--ink)}
+.contact h2 .script{display:block;font-size:clamp(34px,4vw,54px);text-transform:none;color:var(--white);margin-bottom:.05em}
+.card{background:var(--white);border-radius:20px;padding:22px;display:grid;gap:14px}
+.line{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.line .v{font-weight:700;word-break:break-all;min-width:0}
+.copy{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;color:var(--ink)}
+.copy:hover{background:var(--ink);color:var(--white)}
+footer{padding-block:28px 40px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+
+/* mode repérage : bymorganep.github.io/#reperage */
+.guide-tag{display:none;position:absolute;top:8px;left:8px;z-index:6;background:#ffe14d;color:#1f3312;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.05em;padding:4px 8px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+body.reperage .guide-tag{display:block}
+.ph-tile span.guide-tag{background:#ffe14d;color:#1f3312;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:none}
+.guide-bar{display:none;position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:#ffe14d;color:#1f3312;font-family:var(--f-mono);font-size:13px;padding:10px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:calc(100% - 32px);text-align:center}
+body.reperage .guide-bar{display:block}
+.polaroid .ph{position:relative}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(20,30,12,.86);display:grid;place-items:center;padding:20px}
+.lb .frame{width:min(360px,86vw);aspect-ratio:9/16;max-width:100%;border-radius:26px;overflow:hidden;position:relative}
+.lb .close{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;background:var(--white);color:var(--ink);border:0;border-radius:999px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .big.l,.big.r{text-align:center}
+  .big{font-size:clamp(56px,17vw,130px)}
+  .sticker.s1{left:-18%}.sticker.s2{right:-20%}
+  .about{grid-template-columns:1fr;justify-items:center}
+  .formats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
+  .contact{grid-template-columns:1fr}
+  .photos{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
+  .t1,.t2,.t3,.t4,.t5{grid-column:span 1;grid-row:span 1}.t1{grid-row:span 2}
+  .top nav{display:none}
+}
+@media (max-width:520px){
+  .formats,.steps{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sticker{font-size:24px}
+  .sticker.s1{left:-8%}.sticker.s2{right:-8%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <span class="rec mono"><i></i>REC · UGC creator</span>
+    <nav class="mono" aria-label="Sections">
+      <a href="#apropos">À propos</a><a href="#feed">Vidéos</a><a href="#formats">Formats</a><a href="#photos">Photos</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero wrap">
+    <div class="hero-grid">
+      <h1 class="big l"><span class="nm"><span class="script hs">Creative</span>Morgane</span></h1>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="gloss-bottle"><div class="cap"></div><div class="body"><span>gloss</span></div></div>
+          <div class="side-icons"><span>♥</span><span>✦</span><span>↗</span></div>
+          <div class="hud">
+            <div class="hud-top"><span class="tc" id="tc">00:00:00</span><span class="tc">9:16</span></div>
+            <div class="cap-line"><b>@bymorgane.p</b>Je teste ce gloss depuis 7 jours, verdict ↓</div>
+          </div>
+        </div>
+        <span class="sticker s1">face caméra</span>
+        <span class="sticker s2">authentique</span>
+      </div>
+      <p class="big r" aria-hidden="false">Coadou</p>
+    </div>
+    <div class="hero-sub">
+      <p>Créatrice UGC beauté, mode &amp; lifestyle. Des vidéos et photos qui ont l'air vraies, parce qu'elles le sont.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="pill" href="#feed">Voir mes vidéos ▶</a>
+        <a class="pill ghost" href="#contact">Travailler ensemble</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Face caméra</span><span>ASMR</span><span>Unboxing</span><span>Voix off</span><span>Beauté</span><span>Mode</span><span>Lifestyle</span>
+      <span>Face caméra</span><span>ASMR</span><span>Unboxing</span><span>Voix off</span><span>Beauté</span><span>Mode</span><span>Lifestyle</span>
+    </div>
+  </div>
+
+  <section id="apropos" class="wrap">
+    <div class="about">
+      <figure class="polaroid" style="margin:0">
+        <span class="tape"></span>
+        <div class="ph mono" id="portrait">Ta photo portrait ici</div>
+        <figcaption>c'est moi !</figcaption>
+      </figure>
+      <div class="about-text">
+        <div class="sec-head" style="margin-bottom:20px"><h2><span class="script">à propos</span> de moi</h2></div>
+        <p>Hello, moi c'est Morgane ! Passionnée de beauté, mode &amp; lifestyle, je passe mes journées à tester, filmer et partager ce que j'aime.</p>
+        <p>Face caméra, ASMR, unboxing ou voix off : je m'adapte à votre brief en gardant ce qui fait la force de l'UGC, l'authenticité. Des contenus soignés, livrés rapidement, pensés pour donner envie de cliquer.</p>
+        <div class="facts">
+          <div class="fact"><b>9:16</b><span>Formats TikTok, Reels, Shorts</span></div>
+          <div class="fact"><b>4</b><span>Styles de vidéo</span></div>
+          <div class="fact"><b>72h</b><span>Délai de livraison visé</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feed" class="feed-section">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="script">mes</span> vidéos</h2>
+        <p>Faites défiler comme sur votre feed. Cliquez sur une vidéo pour l'ouvrir en grand.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer par format" id="filters"></div>
+      <div class="feed" id="feedList"></div>
+      <p class="hint mono">← glisse →</p>
+    </div>
+  </section>
+
+  <section id="formats" class="wrap">
+    <div class="sec-head">
+      <h2><span class="script">what</span> I can create</h2>
+      <p>Quatre façons de raconter votre produit. Chaque vidéo peut être livrée avec sous-titres et en version sans musique.</p>
+    </div>
+    <div class="formats">
+      <article class="fmt">
+        <div class="viz face" aria-hidden="true"><div class="cam"></div></div>
+        <h3>Face caméra</h3>
+        <p>Je parle directement à votre cible : avis, routine, avant/après. Le format qui crée la confiance.</p>
+        <span class="ex">Idéal : témoignage, routine</span>
+      </article>
+      <article class="fmt">
+        <div class="viz wave" aria-hidden="true" id="asmr"></div>
+        <h3>ASMR</h3>
+        <p>Textures, clics, ouvertures. On entend et on ressent le produit avant de l'avoir en main.</p>
+        <span class="ex">Idéal : skincare, packaging</span>
+      </article>
+      <article class="fmt">
+        <div class="viz box" aria-hidden="true"><div class="b"><div class="lid"></div></div></div>
+        <h3>Unboxing</h3>
+        <p>La découverte en temps réel, la première réaction, les détails du colis. L'effet « je le veux ».</p>
+        <span class="ex">Idéal : lancement, coffret</span>
+      </article>
+      <article class="fmt">
+        <div class="viz wave" aria-hidden="true" id="vo"></div>
+        <h3>Voix off</h3>
+        <p>Plans produits soignés et narration posée. Parfait pour expliquer sans se montrer.</p>
+        <span class="ex">Idéal : tuto, bénéfices produit</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="photos" class="wrap" style="padding-top:0">
+    <div class="sec-head">
+      <h2><span class="script">ugc</span> photos</h2>
+      <p>Flat lays, mains, mises en situation : des visuels prêts pour vos pubs et votre site.</p>
+    </div>
+    <div class="photos" id="photoGrid"></div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <div class="sec-head"><h2><span class="script">comment</span> on bosse</h2></div>
+    <div class="steps">
+      <div class="step"><span class="n">Étape 1</span><h3>Le brief</h3><p>Vous m'envoyez votre produit, votre cible et votre objectif.</p></div>
+      <div class="step"><span class="n">Étape 2</span><h3>Votre script</h3><p>Vous me transmettez votre script, je l'interprète avec mes mots pour qu'il sonne naturel.</p></div>
+      <div class="step"><span class="n">Étape 3</span><h3>Tournage</h3><p>Lumière naturelle, plusieurs prises, plusieurs angles.</p></div>
+      <div class="step"><span class="n">Étape 4</span><h3>Livraison</h3><p>Vidéos montées et rushs, avec un aller-retour de retouches.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap" style="padding-top:0">
+    <div class="contact">
+      <h2><span class="script">une collaboration ?</span>Travaillons ensemble</h2>
+      <div class="card">
+        <div class="line"><span class="mono">E-mail</span></div>
+        <div class="line"><span class="v" id="mail">bymorganeugc.p@gmail.com</span><button class="copy" id="copyMail" type="button">Copier</button></div>
+        <div class="line"><span class="mono">Instagram</span><a class="v" href="https://www.instagram.com/bymorgane.p/" target="_blank" rel="noopener">@bymorgane.p</a></div>
+        <div class="line"><span class="mono">TikTok</span><a class="v" href="https://www.tiktok.com/@bymorgane.p" target="_blank" rel="noopener">@bymorgane.p</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap mono"><span>Morgane Coadou · UGC content creator</span><span>Beauté · Mode · Lifestyle</span></footer>
+</main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Vidéo">
+  <button class="close" id="lbClose" type="button">Fermer ✕</button>
+  <div class="frame" id="lbFrame"></div>
+</div>
+
+<script>
+/* =====================================================================
+   CONTENU DE TON PORTFOLIO : c'est la seule partie à modifier.
+   =====================================================================
+
+   OÙ EST QUOI ? Ouvre ton site avec #reperage à la fin de l'adresse :
+        https://bymorganep.github.io/#reperage
+   Chaque emplacement affiche alors une étiquette jaune (PORTRAIT,
+   VIDÉO 1, PHOTO 3…) qui correspond aux numéros ci-dessous.
+   Les marques ne voient jamais ces étiquettes (adresse normale).
+
+   COMMENT CHANGER UN CONTENU ?
+   1. Envoie ton fichier sur GitHub : Add file → Upload files → Commit.
+   2. Écris son nom EXACT entre les guillemets, ex. : video:"gloss.mp4"
+   3. Commit, attends la coche verte, puis Cmd + Maj + R sur ton site.
+
+   RÈGLES : noms sans espaces ni accents · photos en .jpg (jamais HEIC
+   renommé) · vidéos en .mp4 de moins de 25 Mo · "" = visuel de démo.
+   ===================================================================== */
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   PORTRAIT
+   Où sur le site : section « À propos », le polaroïd « c'est moi ! »
+   ───────────────────────────────────────────────────────────────────── */
+const PORTRAIT = "photo-signature.jpg";
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   VIDÉOS
+   Où sur le site : section « Mes vidéos » (le grand bloc vert foncé),
+   les téléphones qu'on fait glisser, dans l'ordre de gauche à droite.
+
+   title  = nom affiché sur la vidéo
+   format = "Face caméra", "ASMR", "Unboxing" ou "Voix off" (crée les filtres)
+   duree  = durée affichée, ex. "0:28"
+   video  = nom du fichier .mp4 envoyé sur GitHub
+   bg     = couleur de fond (ne pas toucher)
+
+   Ajouter une vidéo : copie une ligne entière, colle-la en dessous.
+   Supprimer une vidéo : efface la ligne entière.
+   Chaque ligne se termine par  },
+   ───────────────────────────────────────────────────────────────────── */
+const VIDEOS = [
+  /* VIDÉO 1 */ {title:"Gloss",       format:"Face caméra", duree:"0:28", video:"", bg:"linear-gradient(160deg,#f6c7cf,#e9879b 50%,#a8445c)"},
+  /* VIDÉO 2 */ {title:"Sérum",       format:"ASMR",        duree:"0:15", video:"", bg:"linear-gradient(160deg,#e9eef0,#b8c6cc 55%,#6c7f87)"},
+  /* VIDÉO 3 */ {title:"Coffret",     format:"Unboxing",    duree:"0:42", video:"", bg:"linear-gradient(160deg,#f3d9b1,#d79d5b 55%,#8a5626)"},
+  /* VIDÉO 4 */ {title:"Parfum",      format:"Voix off",    duree:"0:30", video:"", bg:"linear-gradient(160deg,#f7e3ea,#d7a6c0 50%,#7d4f6b)"},
+  /* VIDÉO 5 */ {title:"Solaire",     format:"Face caméra", duree:"0:22", video:"", bg:"linear-gradient(160deg,#fff1a8,#f2c94c 50%,#3d5a1a)"},
+  /* VIDÉO 6 */ {title:"Crème mains", format:"ASMR",        duree:"0:18", video:"", bg:"linear-gradient(160deg,#eef0e6,#c7cfb3 55%,#5d6b50)"},
+  /* VIDÉO 7 */ {title:"Vernis",      format:"Unboxing",    duree:"0:35", video:"", bg:"linear-gradient(160deg,#ffd0d6,#d9363e 55%,#6d1520)"},
+];
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   PHOTOS
+   Où sur le site : section « UGC photos », la grille de 5 cases.
+   Sur ordinateur :
+     PHOTO 1 = grande case verticale à gauche (ta plus belle photo)
+     PHOTO 2 = case du milieu, en haut
+     PHOTO 3 = case de droite, en haut
+     PHOTO 4 = petite case du milieu, en bas
+     PHOTO 5 = petite case de droite, en bas
+
+   title = petite étiquette affichée sur la photo
+   image = nom du fichier .jpg envoyé sur GitHub
+   ───────────────────────────────────────────────────────────────────── */
+const PHOTOS = [
+  /* PHOTO 1 */ {title:"Sérum · flat lay",   image:"", bg:"linear-gradient(150deg,#dfe7ea,#8ea3ab)"},
+  /* PHOTO 2 */ {title:"Gloss · main",       image:"", bg:"linear-gradient(150deg,#f6c7cf,#c76580)"},
+  /* PHOTO 3 */ {title:"Parfum · fleurs",    image:"", bg:"linear-gradient(150deg,#f3dbe5,#9a6a86)"},
+  /* PHOTO 4 */ {title:"Solaire · nature",   image:"", bg:"linear-gradient(150deg,#e9e3a6,#4f6b23)"},
+  /* PHOTO 5 */ {title:"Skincare · routine", image:"", bg:"linear-gradient(150deg,#eef0e6,#8a9a6d)"},
+];
+
+/* ===================== FIN DE LA PARTIE À MODIFIER ===================== */
+</script>
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const secs = d => { const [m,s]=d.split(':').map(Number); return m*60+s; };
+
+function frameHTML(v, big){
+  const media = v.video ? `<video src="${esc(v.video)}" muted loop playsinline ${big?'controls autoplay':''}></video>` : '';
+  return `${media}<div class="ov">
+    <div class="row"><span class="tag">${esc(v.format)}</span><span class="tag">${esc(v.duree)}</span></div>
+    ${v.video && big ? '' : `<span class="play" aria-hidden="true">▶</span>`}
+    <div><span class="label">${esc(v.title)}</span>${big?'':'<div class="progress"><i></i></div>'}</div>
+  </div>`;
+}
+
+/* filtres + feed */
+const formats = ["Tout", ...new Set(VIDEOS.map(v=>v.format))];
+let current = "Tout";
+const filters = document.getElementById('filters');
+filters.innerHTML = formats.map(f=>`<button class="chip" type="button" aria-pressed="${f===current}" data-f="${esc(f)}">${esc(f)}</button>`).join('');
+filters.addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  current=b.dataset.f;
+  filters.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===current));
+  renderFeed();
+});
+const feed = document.getElementById('feedList');
+function renderFeed(){
+  feed.innerHTML = VIDEOS.map((v,i)=>({v,i})).filter(({v})=>current==="Tout"||v.format===current).map(({v,i})=>
+    `<button class="clip" type="button" data-i="${i}" style="--d:${secs(v.duree)}s" aria-label="Ouvrir la vidéo ${esc(v.title)}, ${esc(v.format)}">
+      <div class="frame" style="background:${v.bg}"><span class="guide-tag">VIDÉO ${i+1}</span>${frameHTML(v,false)}</div>
+      <div class="meta"><span>${esc(v.title)}</span><span>${esc(v.format)}</span></div>
+    </button>`).join('');
+  bindHover();
+}
+function bindHover(){
+  feed.querySelectorAll('.clip').forEach(c=>{
+    const vid=c.querySelector('video');
+    c.addEventListener('mouseenter',()=>{ if(reduce) return; c.classList.add('playing'); vid&&vid.play().catch(()=>{}); });
+    c.addEventListener('mouseleave',()=>{ c.classList.remove('playing'); if(vid){vid.pause();vid.currentTime=0;} });
+  });
+}
+renderFeed();
+
+/* lightbox */
+const lb=document.getElementById('lb'), lbFrame=document.getElementById('lbFrame');
+feed.addEventListener('click',e=>{
+  const c=e.target.closest('.clip'); if(!c) return;
+  const v=VIDEOS[+c.dataset.i];
+  lbFrame.style.background=v.bg;
+  lbFrame.innerHTML=frameHTML(v,true);
+  lb.hidden=false; document.getElementById('lbClose').focus();
+});
+function closeLb(){ lb.hidden=true; lbFrame.innerHTML=''; }
+document.getElementById('lbClose').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) closeLb(); });
+
+/* portrait */
+{const p=document.getElementById("portrait");
+ if(typeof PORTRAIT!=="undefined"&&PORTRAIT){p.style.padding="0";p.innerHTML=`<img src="${esc(PORTRAIT)}" alt="Morgane Coadou">`;}
+ p.insertAdjacentHTML("afterbegin",'<span class="guide-tag">PORTRAIT</span>');}
+
+/* mode repérage */
+document.body.insertAdjacentHTML("beforeend",'<div class="guide-bar">Mode repérage : les numéros correspondent à index.html (PORTRAIT, VIDÉO n, PHOTO n)</div>');
+function syncGuide(){ document.body.classList.toggle("reperage", location.hash==="#reperage"); }
+syncGuide(); addEventListener("hashchange",syncGuide);
+
+/* photos */
+document.getElementById('photoGrid').innerHTML = PHOTOS.map((p,i)=>
+  `<div class="ph-tile t${i+1}" style="background:${p.bg}"><span class="guide-tag">PHOTO ${i+1}</span>${p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)}">`:''}<span>${esc(p.title)}</span></div>`).join('');
+
+/* ondes ASMR / voix off */
+[['asmr',28],['vo',28]].forEach(([id,n],k)=>{
+  const el=document.getElementById(id);
+  el.innerHTML=Array.from({length:n},(_,i)=>`<i style="--h:${30+Math.round(Math.abs(Math.sin(i*(k?0.5:1.3)))*65)}%;animation-delay:${(i*0.05).toFixed(2)}s"></i>`).join('');
+});
+
+
+/* ajuste la taille du nom pour qu'il tienne toujours dans sa colonne */
+function fitNames(){
+  document.querySelectorAll('.big').forEach(el=>{
+    el.style.fontSize='';
+    const base=parseFloat(getComputedStyle(el).fontSize);
+    let size=base;
+    for(let i=0;i<6&&el.scrollWidth>el.clientWidth+1;i++){
+      size=size*el.clientWidth/el.scrollWidth*0.98;
+      el.style.fontSize=size+'px';
+    }
+  });
+  /* même taille pour le prénom et le nom */
+  const els=[...document.querySelectorAll('.big')];
+  const m=Math.min(...els.map(e=>parseFloat(getComputedStyle(e).fontSize)));
+  els.forEach(e=>e.style.fontSize=m+'px');
+}
+fitNames();
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitNames);
+addEventListener('resize',fitNames);
+
+/* timecode REC */
+const tc=document.getElementById('tc'); let t0=performance.now();
+function tick(){ const s=Math.floor((performance.now()-t0)/1000)%3600; const f=Math.floor((performance.now()-t0)/40)%25;
+  tc.textContent=`00:${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}:${String(f).padStart(2,'0')}`;
+  if(!reduce) requestAnimationFrame(tick); }
+tick();
+
+/* copier e-mail */
+document.getElementById('copyMail').addEventListener('click',async e=>{
+  const txt=document.getElementById('mail').textContent;
+  try{ await navigator.clipboard.writeText(txt); e.target.textContent='Copié ✓'; }
+  catch{ const r=document.createRange(); r.selectNodeContents(document.getElementById('mail')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); e.target.textContent='Sélectionné'; }
+  setTimeout(()=>e.target.textContent='Copier',1800);
+});
+</script>
+
+</body>
+</html>
