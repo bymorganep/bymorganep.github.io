@@ -595,5 +595,8 @@ document.getElementById('copyMail').addEventListener('click',async e=>{
 <!-- TAILLE DES VIDÉOS EN GRAND -->
 <style>.lb .frame{width:auto!important;height:min(86vh,760px);max-width:92vw;background:#000!important}.lb .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}</style>
 <script>document.getElementById('feedList').addEventListener('click',function(){var v=document.querySelector('#lbFrame video');if(v){var f=function(){if(v.videoWidth)document.getElementById('lbFrame').style.aspectRatio=v.videoWidth+'/'+v.videoHeight;};v.addEventListener('loadedmetadata',f);f();}});</script>
+<!-- CORRECTION AFFICHAGE EN GRAND -->
+<style>body.lb-open #feedList video{visibility:hidden}</style>
+<script>(function(){var lb=document.getElementById('lb');document.getElementById('feedList').addEventListener('click',function(e){if(!e.target.closest('.clip'))return;document.querySelectorAll('#feedList video').forEach(function(v){v.pause();});document.querySelectorAll('#feedList .clip.playing').forEach(function(c){c.classList.remove('playing');});document.body.classList.add('lb-open');});new MutationObserver(function(){if(lb.hidden)document.body.classList.remove('lb-open');}).observe(lb,{attributes:true,attributeFilter:['hidden']});})();</script>
 </body>
 </html>
